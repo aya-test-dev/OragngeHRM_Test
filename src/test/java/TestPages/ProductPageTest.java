@@ -20,7 +20,7 @@ public class ProductPageTest extends BaseTest {
         obj.verifyProductsVisableFun();
         obj.clickOnViewProductFun();
 
-        obj.checkNavigationIntoRightProductFun();
+        obj.isNavigationIntoRightProductVisible();
         obj.checkDetailsOfFirstProduct();
     }
 

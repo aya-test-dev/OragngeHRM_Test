@@ -62,7 +62,7 @@ public class ProductPage {
         driver.navigate().to(value2);
     }
 
-    public void checkNavigationIntoRightProductFun(){
+    public void isNavigationIntoRightProductVisible(){
         System.out.println(driver.findElement(checkNavigationIntoRightProduct).isDisplayed());
     }
 
