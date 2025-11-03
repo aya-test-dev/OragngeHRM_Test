@@ -29,7 +29,7 @@ public class RegisterPage  {
     By userNameField = By.cssSelector("#form > div > div > div:nth-child(3) > div > form > input[type=text]:nth-child(2)");
     By emailAddressField = By.cssSelector("#form > div > div > div:nth-child(3) > div > form > input[type=email]:nth-child(3)");
 
-    By signupBtn = By.xpath("//button[@data-qa=\"signup-button\"]");
+    By signupBtn = By.cssSelector("button[data-qa=\"signup-button\"]");
     By enterAccountInformation = By.cssSelector("#form > div > div > div > div.login-form > h2 > b");
 
 
