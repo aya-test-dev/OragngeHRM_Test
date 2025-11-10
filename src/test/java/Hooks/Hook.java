@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class Hook {
 
     public static WebDriver driver;
-    @Before
+    @Before(value = "not @noHook")
     public void setup(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
@@ -22,7 +22,7 @@ public class Hook {
         driver.manage().window().maximize();
     }
 
-    @After
+    @After(value = "not @noHook")
     public void quit(){
         driver.manage().deleteAllCookies();
         driver.quit();
