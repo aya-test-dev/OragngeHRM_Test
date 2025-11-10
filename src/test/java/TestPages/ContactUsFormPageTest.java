@@ -21,8 +21,8 @@ public class ContactUsFormPageTest extends BaseTest {
 
         obj.setNameContact("aya");
         obj.setEmailContact("ayaali@gmail.com");
-        obj.setSubjectContact("bla bla");
-        obj.setMessageContact("brjhbvejhvbejhbvjbvjhbvjhbjh");
+        obj.setSubjectContact("Inquiry About Services");
+        obj.setMessageContact("Hello, I am interested in your services. Please contact me. Thank you.");
         obj.setFileContact("C:/Users/Aya Ali/OneDrive/Desktop/Ahmed-Ali final-cv.pdf");
 
         obj.clickSubmitButton();
