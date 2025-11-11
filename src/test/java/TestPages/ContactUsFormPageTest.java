@@ -26,7 +26,10 @@ public class ContactUsFormPageTest extends BaseTest {
         obj.setEmailContact("ayaali@gmail.com");
         obj.setSubjectContact("Inquiry About Services");
         obj.setMessageContact("Hello, I am interested in your services. Please contact me. Thank you.");
-        obj.setFileContact("C:/Users/Aya Ali/OneDrive/Desktop/Ahmed-Ali final-cv.pdf");
+        URL pdfResource = getClass().getClassLoader().getResource("Ahmed-Ali final-cv.pdf");
+        Assert.assertNotNull(pdfResource, "PDF resource not found");
+        String pdfPath = Paths.get(pdfResource.toURI()).toString();
+        obj.setFileContact(pdfPath);
 
         obj.clickSubmitButton();
 
