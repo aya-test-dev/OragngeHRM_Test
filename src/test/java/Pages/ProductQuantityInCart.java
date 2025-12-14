@@ -19,7 +19,7 @@ public class ProductQuantityInCart {
 
     String quantity;
 
-    By homeCheck = By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[1]/a");
+    By homeCheck = By.cssSelector("#header > div > div > div > div:nth-child(2) > div > ul > li:nth-child(1) > a");
     By viewProduct = By.cssSelector("body > section:nth-child(3) > div > div > div.col-sm-9.padding-right > div.features_items > div:nth-child(3) > div > div.choose > ul > li > a");
 
     By productDetailIsOpened = By.cssSelector("body > section > div > div > div.col-sm-9.padding-right > div.product-details > div.col-sm-7 > div > img.newarrival");
@@ -84,7 +84,7 @@ public class ProductQuantityInCart {
         WebElement element2 = wait.until(
                 ExpectedConditions.visibilityOf(element));
         String value = element.getText();
-        System.out.println(value == quantity);
+        System.out.println(value);
 
     }
 }
