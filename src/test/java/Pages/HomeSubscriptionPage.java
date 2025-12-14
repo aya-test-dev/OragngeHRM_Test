@@ -12,12 +12,12 @@ public class HomeSubscriptionPage {
         this.driver = driver;
     }
 
-    By homeCheck = By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[1]/a");
+    By homeCheck = By.cssSelector("#header > div > div > div > div:nth-child(2) > div > ul > li:nth-child(1) > a");
 
 
-    By verifySubscription = By.xpath("//*[@id=\"footer\"]/div[1]/div/div/div[2]/div/h2");
-    By emailVerication = By.xpath("//*[@id=\"susbscribe_email\"]");
-    By submitButtonVerication = By.xpath("//*[@id=\"subscribe\"]");
+    By verifySubscription = By.cssSelector("#footer > div:nth-child(1) > div > div > div:nth-child(2) > div > h2");
+    By emailVerication = By.cssSelector("#susbscribe_email");
+    By submitButtonVerication = By.cssSelector("#subscribe");
 
     public void HomeCheck() {
         System.out.println(driver.findElement(homeCheck).isDisplayed());
