@@ -12,23 +12,23 @@ public class ContactUsFormPage {
         this.driver = driver;
     }
 
-    By homeCheck = By.cssSelector("body > section:nth-child(3) > div > div > div.col-sm-9.padding-right > div.features_items > h2");
+    By homeCheck = By.xpath("//body/section[3]/div/div/div[contains(@class,'col-sm-9') and contains(@class,'padding-right')]/div[contains(@class,'features_items')]/h2");
 
-    By contactUsFormButton = By.cssSelector("#header > div > div > div > div.col-sm-8 > div > ul > li:nth-child(8) > a");
+    By contactUsFormButton = By.xpath("//*[@id='header']/div/div/div/div[contains(@class,'col-sm-8')]/div/ul/li[8]/a");
 
-    By getInTouchVisible = By.cssSelector("#contact-page > div.row > div.col-sm-8 > div > h2");
+    By getInTouchVisible = By.xpath("//*[@id='contact-page']/div[contains(@class,'row')]/div[contains(@class,'col-sm-8')]/div/h2");
 
-    By nameContact = By.cssSelector("#contact-us-form > div:nth-child(2) > input");
-    By emailContact = By.cssSelector("#contact-us-form > div:nth-child(3) > input");
-    By subjectContact = By.cssSelector("#contact-us-form > div:nth-child(4) > input");
-    By messageContact = By.cssSelector("#message");
-    By fileContact = By.cssSelector("#contact-us-form > div:nth-child(6) > input");
+    By nameContact = By.xpath("//*[@id='contact-us-form']/div[2]/input");
+    By emailContact = By.xpath("//*[@id='contact-us-form']/div[3]/input");
+    By subjectContact = By.xpath("//*[@id='contact-us-form']/div[4]/input");
+    By messageContact = By.xpath("//*[@id='message']");
+    By fileContact = By.xpath("//*[@id='contact-us-form']/div[6]/input");
 
-    By submitButton = By.cssSelector("#contact-us-form > div:nth-child(7) > input");
+    By submitButton = By.xpath("//*[@id='contact-us-form']/div[7]/input");
 
-    By successMessageContact = By.cssSelector("#contact-page > div.row > div.col-sm-8 > div > div.status.alert.alert-success");
+    By successMessageContact = By.xpath("//*[@id='contact-page']/div[contains(@class,'row')]/div[contains(@class,'col-sm-8')]/div/div[contains(@class,'status') and contains(@class,'alert') and contains(@class,'alert-success')]");
 
-    By homeButton = By.cssSelector("#form-section > a");
+    By homeButton = By.xpath("//*[@id='form-section']/a");
 
     public void HomeCheck() {
         System.out.println(driver.findElement(homeCheck).isDisplayed());
