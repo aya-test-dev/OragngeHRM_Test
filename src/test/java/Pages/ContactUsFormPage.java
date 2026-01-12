@@ -12,23 +12,23 @@ public class ContactUsFormPage {
         this.driver = driver;
     }
 
-    By homeCheck = By.xpath("//body/section[3]/div/div/div[contains(@class,'col-sm-9') and contains(@class,'padding-right')]/div[contains(@class,'features_items')]/h2");
+    By homeCheck = By.cssSelector("div.features_items > h2");
 
-    By contactUsFormButton = By.xpath("//*[@id='header']/div/div/div/div[contains(@class,'col-sm-8')]/div/ul/li[8]/a");
+    By contactUsFormButton = By.linkText("Contact Us");
 
-    By getInTouchVisible = By.xpath("//*[@id='contact-page']/div[contains(@class,'row')]/div[contains(@class,'col-sm-8')]/div/h2");
+    By getInTouchVisible = By.cssSelector("#contact-page h2");
 
-    By nameContact = By.xpath("//*[@id='contact-us-form']/div[2]/input");
-    By emailContact = By.xpath("//*[@id='contact-us-form']/div[3]/input");
-    By subjectContact = By.xpath("//*[@id='contact-us-form']/div[4]/input");
-    By messageContact = By.xpath("//*[@id='message']");
-    By fileContact = By.xpath("//*[@id='contact-us-form']/div[6]/input");
+    By nameContact = By.name("name");
+    By emailContact = By.name("email");
+    By subjectContact = By.name("subject");
+    By messageContact = By.id("message");
+    By fileContact = By.cssSelector("#contact-us-form input[type='file']");
 
-    By submitButton = By.xpath("//*[@id='contact-us-form']/div[7]/input");
+    By submitButton = By.cssSelector("#contact-us-form input[type='submit']");
 
-    By successMessageContact = By.xpath("//*[@id='contact-page']/div[contains(@class,'row')]/div[contains(@class,'col-sm-8')]/div/div[contains(@class,'status') and contains(@class,'alert') and contains(@class,'alert-success')]");
+    By successMessageContact = By.cssSelector("#contact-page .alert-success");
 
-    By homeButton = By.xpath("//*[@id='form-section']/a");
+    By homeButton = By.cssSelector("#form-section a");
 
     public void HomeCheck() {
         System.out.println(driver.findElement(homeCheck).isDisplayed());
