@@ -12,23 +12,23 @@ public class ContactUsFormPage {
         this.driver = driver;
     }
 
-    By homeCheck = By.cssSelector("body > section:nth-child(3) > div > div > div.col-sm-9.padding-right > div.features_items > h2");
+    By homeCheck = By.cssSelector("div.features_items > h2");
 
-    By contactUsFormButton = By.cssSelector("#header > div > div > div > div.col-sm-8 > div > ul > li:nth-child(8) > a");
+    By contactUsFormButton = By.linkText("Contact Us");
 
-    By getInTouchVisible = By.cssSelector("#contact-page > div.row > div.col-sm-8 > div > h2");
+    By getInTouchVisible = By.cssSelector("#contact-page h2");
 
-    By nameContact = By.cssSelector("#contact-us-form > div:nth-child(2) > input");
-    By emailContact = By.cssSelector("#contact-us-form > div:nth-child(3) > input");
-    By subjectContact = By.cssSelector("#contact-us-form > div:nth-child(4) > input");
-    By messageContact = By.cssSelector("#message");
-    By fileContact = By.cssSelector("#contact-us-form > div:nth-child(6) > input");
+    By nameContact = By.name("name");
+    By emailContact = By.name("email");
+    By subjectContact = By.name("subject");
+    By messageContact = By.id("message");
+    By fileContact = By.cssSelector("#contact-us-form input[type='file']");
 
-    By submitButton = By.cssSelector("#contact-us-form > div:nth-child(7) > input");
+    By submitButton = By.cssSelector("#contact-us-form input[type='submit']");
 
-    By successMessageContact = By.cssSelector("#contact-page > div.row > div.col-sm-8 > div > div.status.alert.alert-success");
+    By successMessageContact = By.cssSelector("#contact-page .alert-success");
 
-    By homeButton = By.cssSelector("#form-section > a");
+    By homeButton = By.cssSelector("#form-section a");
 
     public void HomeCheck() {
         System.out.println(driver.findElement(homeCheck).isDisplayed());
