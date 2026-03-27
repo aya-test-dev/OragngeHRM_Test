@@ -9,6 +9,7 @@ Feature: Login feature in automation exercise project
 #
 
 
+    @noHook
     Scenario: failed Login with Valid Credentials
       Given User is on home page logout
       When user click signUpOrLogIn button logout
