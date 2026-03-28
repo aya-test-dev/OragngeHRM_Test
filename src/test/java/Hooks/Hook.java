@@ -6,6 +6,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import java.time.Duration;
 
 public class Hook {
 
@@ -18,6 +19,8 @@ public class Hook {
         options.addArguments("--ignore-certificate-errors");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://automationexercise.com/");
         driver.manage().window().maximize();
     }
