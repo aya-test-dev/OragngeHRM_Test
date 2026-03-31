@@ -14,29 +14,29 @@ public class ProductPage {
     }
 
 
-    By homeCheck = By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[1]/a");
-    By productsButton = By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[2]/a");
-    By verifyProductsButton = By.xpath("/html/body/section[2]/div/div/div[2]/div/h2");
+    By homeCheck = By.cssSelector("#header > div > div > div > div:nth-child(2) > div > ul > li:nth-child(1) > a");
+    By productsButton = By.cssSelector("#header > div > div > div > div:nth-child(2) > div > ul > li:nth-child(2) > a");
+    By verifyProductsButton = By.cssSelector("body > section:nth-child(2) > div > div > div:nth-child(2) > div > h2");
 
-    By verifyProductsListVisable = By.xpath("/html/body/section[2]/div/div/div[2]");
+    By verifyProductsListVisable = By.cssSelector("body > section:nth-child(2) > div > div > div:nth-child(2)");
 
-    By clickOnViewProduct = By.xpath("/html/body/section[2]/div/div/div[2]/div/div[2]/div/div[2]/ul/li/a");
+    By clickOnViewProduct = By.cssSelector("body > section:nth-child(2) > div > div > div:nth-child(2) > div > div:nth-child(2) > div > div:nth-child(2) > ul > li > a");
 
-    By checkNavigationIntoRightProduct = By.xpath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/h2");
+    By checkNavigationIntoRightProduct = By.cssSelector("body > section > div > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div > h2");
 
-    By productName = By.xpath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/h2");
-    By productCategory = By.xpath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[1]");
-    By productPrice = By.xpath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/span/span");
-    By productAvailability = By.xpath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[2]/b");
-    By productCondition = By.xpath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[3]/b");
-    By productBrand = By.xpath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[4]/b");
+    By productName = By.cssSelector("body > section > div > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div > h2");
+    By productCategory = By.cssSelector("body > section > div > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div > p:nth-child(1)");
+    By productPrice = By.cssSelector("body > section > div > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div > span > span");
+    By productAvailability = By.cssSelector("body > section > div > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div > p:nth-child(2) > b");
+    By productCondition = By.cssSelector("body > section > div > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div > p:nth-child(3) > b");
+    By productBrand = By.cssSelector("body > section > div > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div > p:nth-child(4) > b");
 
-    By searchBar = By.xpath("//*[@id=\"search_product\"]");
-    By getSearchButton = By.xpath("//*[@id=\"search_product\"]");
+    By searchBar = By.cssSelector("#search_product");
+    By getSearchButton = By.cssSelector("#search_product");
 
-    By verifySearchedProduct = By.xpath("/html/body/section[2]/div/div/div[2]/div/h2");
+    By verifySearchedProduct = By.cssSelector("body > section:nth-child(2) > div > div > div:nth-child(2) > div > h2");
 
-    By relatedSearchProducts = By.xpath("/html/body/section[2]/div/div/div[2]/div/div[2]/div/div[1]/div[1]/p");
+    By relatedSearchProducts = By.cssSelector("body > section:nth-child(2) > div > div > div:nth-child(2) > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(1) > p");
 
     public void HomeCheck() {
         System.out.println(driver.findElement(homeCheck).isDisplayed());

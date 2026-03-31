@@ -17,19 +17,19 @@ public class ProductWithCart {
         this.driver = driver;
     }
 
-    By homeCheck = By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[1]/a");
+    By homeCheck = By.cssSelector("#header > div > div > div > div:nth-child(2) > div > ul > li:nth-child(1) > a");
 
-    By productsButton = By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[2]/a");
+    By productsButton = By.cssSelector("#header > div > div > div > div:nth-child(2) > div > ul > li:nth-child(2) > a");
 
-    By selectFirstProduct = By.xpath("/html/body/section[2]/div/div/div[2]/div/div[2]/div/div[1]/div[1]/img");
-    By selectSecondProduct = By.xpath("/html/body/section[2]/div/div/div[2]/div/div[3]/div/div[1]/div[1]/img");
+    By selectFirstProduct = By.cssSelector("body > section:nth-child(2) > div > div > div:nth-child(2) > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(1) > img");
+    By selectSecondProduct = By.cssSelector("body > section:nth-child(2) > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div:nth-child(1) > div:nth-child(1) > img");
 
-    By hoverOnFirstProduct = By.xpath("/html/body/section[2]/div/div/div[2]/div/div[2]/div/div[1]/div[2]/div");
-    By hoverOnSecondProduct = By.xpath("/html/body/section[2]/div/div/div[2]/div/div[3]/div/div[1]/div[2]/div");
+    By hoverOnFirstProduct = By.cssSelector("body > section:nth-child(2) > div > div > div:nth-child(2) > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > div");
+    By hoverOnSecondProduct = By.cssSelector("body > section:nth-child(2) > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div:nth-child(1) > div:nth-child(2) > div");
 
-    By continoueShopping = By.xpath("/html/body/section[2]/div/div/div[2]/div/div[1]/div/div/div[3]/button");
+    By continoueShopping = By.cssSelector("body > section:nth-child(2) > div > div > div:nth-child(2) > div > div:nth-child(1) > div > div > div:nth-child(3) > button");
 
-    By viewCartLink = By.xpath("(//a[@href=\"/view_cart\"])[2]");
+    By viewCartLink = By.cssSelector("a[href=\"/view_cart\"]:nth-of-type(2)");
 
     By firstProductAddedToCart = By.cssSelector("#product-1 > td.cart_description > p");
     By secondProductAddedToCart = By.cssSelector("#product-2 > td.cart_description > h4 > a");
@@ -42,13 +42,13 @@ public class ProductWithCart {
     By seconedProductQuantityInCartPage = By.cssSelector("#product-2 > td.cart_quantity > button");
     By seconedProductTotalPriceInCartPage = By.cssSelector("#product-2 > td.cart_total > p");
 
-    By hoverProductFromHome = By.xpath("//img[@src=\"/get_product_picture/2\"]");
-    By clickAddToCartHome = By.xpath("(//a[@data-product-id=\"2\"])[2]");
+    By hoverProductFromHome = By.cssSelector("img[src=\"/get_product_picture/2\"]");
+    By clickAddToCartHome = By.cssSelector("a[data-product-id=\"2\"]:nth-of-type(2)");
 
-    By verifyCartPage = By.xpath("//td[@class=\"image\"]");
-    By deleteProductFromCart = By.xpath("//a[@class=\"cart_quantity_delete\"]");
+    By verifyCartPage = By.cssSelector("td.image");
+    By deleteProductFromCart = By.cssSelector("a.cart_quantity_delete");
 
-    By verifyCartEmpty = By.xpath("//span[@id=\"empty_cart\"]");
+    By verifyCartEmpty = By.cssSelector("#empty_cart");
 
     public void HomeCheck() {
         System.out.println(driver.findElement(homeCheck).isDisplayed());
@@ -67,7 +67,7 @@ public class ProductWithCart {
         WebElement elementToHover = driver.findElement(selectFirstProduct);
 
         // Find the element to click (can be the same or revealed after hover)
-        WebElement elementToClick = driver.findElement(By.xpath("/html/body/section[2]/div/div/div[2]/div/div[2]/div/div[1]/div[2]/div/a"));
+        WebElement elementToClick = driver.findElement(By.cssSelector("body > section:nth-child(2) > div > div > div:nth-child(2) > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > div > a"));
 
         // Create Actions instance
         Actions actions = new Actions(driver);
@@ -116,25 +116,31 @@ public class ProductWithCart {
     }
 
     public void verifyFirstProductAddedToCart(){
-        System.out.println(driver.findElement(firstProductAddedToCart).isDisplayed());
+        String description = driver.findElement(firstProductAddedToCart).getText();
+        System.out.println(description);
     }
 
     public void verifySeconedProductAddedToCart(){
-        System.out.println(driver.findElement(secondProductAddedToCart).isDisplayed());
+        String description = driver.findElement(secondProductAddedToCart).getText();
+        System.out.println(description);
     }
 
     public void verifyDetailsOfFirstProduct(){
-        System.out.println(driver.findElement(firstProductPriceInCartPage).isDisplayed());
-        System.out.println(driver.findElement(firstProductQuantityInCartPage).isDisplayed());
-        System.out.println(driver.findElement(firstProductTotalPriceInCartPage).isDisplayed());
-
+        String price = driver.findElement(firstProductPriceInCartPage).getText();
+        System.out.println(price);
+        String quantity = driver.findElement(firstProductQuantityInCartPage).getText();
+        System.out.println(quantity);
+        String total = driver.findElement(firstProductTotalPriceInCartPage).getText();
+        System.out.println(total);
     }
 
     public void verifyDetailsOfSecondProduct(){
-        System.out.println(driver.findElement(seconedProductPriceInCartPage).isDisplayed());
-        System.out.println(driver.findElement(seconedProductQuantityInCartPage).isDisplayed());
-        System.out.println(driver.findElement(seconedProductTotalPriceInCartPage).isDisplayed());
-
+        String price = driver.findElement(seconedProductPriceInCartPage).getText();
+        System.out.println(price);
+        String quantity = driver.findElement(seconedProductQuantityInCartPage).getText();
+        System.out.println(quantity);
+        String total = driver.findElement(seconedProductTotalPriceInCartPage).getText();
+        System.out.println(total);
     }
 
     public void chooseProductFromHome(){
